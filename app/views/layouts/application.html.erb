@@ -1,14 +1,69 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Blue Wave Pool Supplies</title>
-    <%= csrf_meta_tags %>
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <title><%= content_for?(:title) ? yield(:title) : "Blue Wave Pool Supplies" %></title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
   </head>
 
   <body>
+  <!-- Desktop Navigation -->
+  <div data-sticky-container>
+    <div class="top-bar nav-desktop sticky" data-sticky data-options="marginTop:0;" style="width:100%">
+      <div class="wrap">
+        <div class="top-bar-left">
+          <h3 class="site-logo">Blue Wave Pool Supplies</h3>
+        </div>
+        <div class="top-bar-right">
+          <ul class="menu menu-desktop">
+            <li><a href="#">About</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
     <%= yield %>
   </body>
+  
+  <!-- Footer -->
+  <footer>
+    <div class="wrap row small-up-1 medium-up-3">
+      <div class="column">
+        <h4>Contact Info</h4>
+        <hr>
+        <p>
+        <a href="#"><span><i class="fa fa-phone fa-1g"></i></span> 901-555-1234</a>
+        <a href="#"><span><i class="fa fa-envelope fa-1g"></i></span> info@company.com</a>
+        <a href="#"><span><i class="fa fa-address-card fa-1g"></i></span> 123 Some Street</a>
+        </p>
+      </div>
+      <div class="column">
+        <h4>Site Map</h4>
+        <hr>
+        <p>
+        <a href="#">About Us</a>
+        <a href="#">Services</a>
+        <a href="#">Contact Us</a>
+        </p>
+      </div>
+      <div class="column">
+        <h4>Social Media</h4>
+        <hr>
+        <p>
+        <a href="#" class="inline"><i class="fa fa-facebook-official fa-2x"></i></a>
+        <a href="#" class="inline"><i class="fa fa-twitter-square fa-2x"></i></a>
+        <a href="#" class="inline"><i class="fa fa-instagram fa-2x"></i></a>
+        <a href="#"class="inline"><i class="fa fa-linkedin-square fa-2x"></i></a>
+        </p>
+      </div>
+    </div>
+  </footer>
 </html>

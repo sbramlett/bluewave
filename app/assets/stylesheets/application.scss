@@ -12,6 +12,161 @@
  *
  *= require_tree .
  *= require_self
+ *= require foundation_and_overrides
  */
 @import "foundation_and_overrides";
-/* Add imports of custom sass/scss files here */
+@import "font-awesome-sprockets";
+@import "font-awesome";
+ 
+ /********************
+General
+********************/
+
+.wrap {
+  width: 90%;
+  max-width: 1100px;
+  display: block;
+  margin: 0 auto;
+}
+
+
+/********************
+Navigation Mobile
+********************/
+
+
+
+
+
+/********************
+Navigation Desktop
+********************/
+.nav-desktop {
+  background-color: #222;
+  height: 4em;
+  display: flex;
+  align-items: center;
+}
+
+.site-logo {
+  color: white;
+}
+
+.nav-desktop .menu-desktop {
+  background-color: transparent;
+}
+
+.menu > li > a {
+  color: white;
+}
+
+.menu > li > a:hover {
+  background-color: rgba(255, 255, 255, 0.1)
+}
+
+
+/********************
+Hero
+********************/
+.hero {
+  padding: 4em 0;
+  width: 100%;
+  height: 70vh;
+  background-image: image-url('hero.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	align-content: center;
+}
+
+.hero h1,
+.hero p {
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 80%;
+  
+}
+
+
+
+/********************
+Main
+********************/
+.main {
+  padding: 4em 0;
+}
+
+.middle {
+  background-color: lightblue;
+  padding: 4em 0;
+}
+
+.photos {
+  padding: 4em 0;
+}
+
+/********************
+Footer
+********************/
+
+footer {
+  background-color: #222;
+  padding: 4em 0em;
+  color: white;
+}
+
+footer a {
+  display: block;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+footer a span {
+   padding: 5px;
+}
+
+footer a:hover,
+footer a.inline:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+footer a.inline {
+  display: inline;
+  padding: 5px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+footer h4 {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.4em;
+}
+
+footer p {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1em;
+}
+
+footer hr {
+  border-color: rgba(255, 255, 255, 0.1);
+  margin: .5em;
+}
+
+
+/********************
+Media Query
+********************/
+@media (max-width: 639px) {
+    .nav-desktop {
+      display: none;
+    }
+}
+
+@media (max-width: 875px) {
+    .hero h1,
+    .hero p {
+      width: 100%;
+    }
+}
