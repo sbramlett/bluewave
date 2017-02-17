@@ -15,9 +15,11 @@
  *= require foundation_and_overrides
  */
 @import "foundation_and_overrides";
+
 @import "font-awesome-sprockets";
+
 @import "font-awesome";
- 
+
  /********************
 General
 ********************/
@@ -29,18 +31,40 @@ General
   margin: 0 auto;
 }
 
+.wrap--thin {
+    width: 70%;
+}
+
+.wrapper {
+  padding: 2em 0;
+}
+
+.line-thing {
+  position: relative;
+  // need this to make the before element's absolute position work relative to this piece
+  &:before {
+    display: block;
+    content: "";
+    width: 100px;
+    height: 4px;
+    position: absolute;
+    left: 50%;
+    bottom: -15px;
+    margin-left: -50px;
+    background: #39A6DC;
+    border-radius: 3px;
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.08);
+  }
+}
 
 /********************
 Navigation Mobile
 ********************/
 
-
-
-
-
 /********************
 Navigation Desktop
 ********************/
+
 .nav-desktop {
   background-color: #222;
   height: 4em;
@@ -58,53 +82,57 @@ Navigation Desktop
 
 .menu > li > a {
   color: white;
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
 }
-
-.menu > li > a:hover {
-  background-color: rgba(255, 255, 255, 0.1)
-}
-
 
 /********************
 Hero
 ********************/
+
 .hero {
-  padding: 4em 0;
+  padding: 0;
   width: 100%;
-  height: 70vh;
-  background-image: image-url('hero.jpg');
-  background-repeat: no-repeat;
+  height: 100vh;
+  background-image: image-url("bw3.jpg");
   background-size: cover;
+  background-position: center center;
   display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	align-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  h1, p {
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 80%;
+  }
 }
-
-.hero h1,
-.hero p {
-  color: rgba(255, 255, 255, 0.8);
-  max-width: 80%;
-  
-}
-
-
 
 /********************
 Main
 ********************/
+
 .main {
   padding: 4em 0;
+  h1 {
+    text-align: center;
+  }
 }
 
 .middle {
   background-color: lightblue;
   padding: 4em 0;
+  h1 {
+    text-align: center;
+  }
 }
 
 .photos {
   padding: 4em 0;
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
 }
 
 /********************
@@ -115,58 +143,53 @@ footer {
   background-color: #222;
   padding: 4em 0em;
   color: white;
+  a {
+    display: block;
+    color: rgba(255, 255, 255, 0.6);
+    span {
+      padding: 5px;
+    }
+    &:hover {
+      color: rgba(255, 255, 255, 0.8);
+    }
+    &.inline {
+      &:hover {
+        color: rgba(255, 255, 255, 0.8);
+      }
+      display: inline;
+      padding: 5px;
+      color: rgba(255, 255, 255, 0.6);
+    }
+  }
+  h4 {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.4em;
+  }
+  p {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1em;
+  }
+  hr {
+    border-color: rgba(255, 255, 255, 0.1);
+    margin: .5em;
+  }
 }
-
-footer a {
-  display: block;
-  color: rgba(255, 255, 255, 0.6);
-}
-
-footer a span {
-   padding: 5px;
-}
-
-footer a:hover,
-footer a.inline:hover {
-  color: rgba(255, 255, 255, 0.8);
-}
-
-footer a.inline {
-  display: inline;
-  padding: 5px;
-  color: rgba(255, 255, 255, 0.6);
-}
-
-footer h4 {
-  text-align: center;
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 1.4em;
-}
-
-footer p {
-  text-align: center;
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 1em;
-}
-
-footer hr {
-  border-color: rgba(255, 255, 255, 0.1);
-  margin: .5em;
-}
-
 
 /********************
 Media Query
 ********************/
 @media (max-width: 639px) {
-    .nav-desktop {
-      display: none;
-    }
+  .nav-desktop {
+    display: none;
+  }
 }
 
 @media (max-width: 875px) {
-    .hero h1,
-    .hero p {
+  .hero {
+    h1, p {
       width: 100%;
     }
+  }
 }
